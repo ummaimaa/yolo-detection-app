@@ -3,13 +3,13 @@ services:
     build: .
     container_name: yolo_app
     expose:
-      - "8000"  # only internal, Nginx will proxy
+      - "8000"  
 
   nginx:
     image: nginx:latest
     container_name: yolo_nginx
     ports:
-      - "8080:80"   # public → Nginx
+      - "8080:80"   # public:Nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
@@ -19,8 +19,8 @@ services:
     image: locustio/locust
     container_name: yolo_locust
     volumes:
-      - ./locust:/mnt/locust   # mount whole folder (locustfile.py + test.jpg)
-    working_dir: /mnt/locust   # run from inside mounted folder
+      - ./locust:/mnt/locust 
+    working_dir: /mnt/locust   
     command: -f locustfile.py --host http://nginx
     ports:
       - "8089:8089"
