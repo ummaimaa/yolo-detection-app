@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment files
+.env
+*.env
+
+# IDEs & Editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Testing & cache
+.pytest_cache/
+.mypy_cache/
+coverage/
+
+# Docker
+*.log
